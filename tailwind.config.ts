@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   darkMode: ['class'],
@@ -29,9 +30,13 @@ const config: Config = {
           '100': '#F7F7F7',
           DEFAULT: '#FFFFFF',
         },
+        navbarbg: 'rgba(17, 1, 61, 0.6);',
       },
       fontFamily: {
-        'work-sans': ['var(--font-work-sans)'],
+        sans: ['var(--font-roboto)', ...fontFamily.sans],
+        jura: ['var(--font-jura)', 'sans-serif'],
+        roboto: ['var(--font-roboto)', 'sans-serif'],
+        londrinaShadow: ['var(--font-londrina-shadow)', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -39,9 +44,31 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       boxShadow: {
-        100: '2px 2px 0px 0px rgb(0, 0, 0)',
-        200: '2px 2px 0px 2px rgb(0, 0, 0)',
-        300: '2px 2px 0px 2px rgb(238, 43, 105)',
+        '100': '2px 2px 0px 0px rgb(0, 0, 0)',
+        '200': '2px 2px 0px 2px rgb(0, 0, 0)',
+        '300': '2px 2px 0px 2px rgb(238, 43, 105)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
