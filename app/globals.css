@@ -60,7 +60,7 @@
   }
 
   .heading {
-    @apply px-6 py-3 2xl:text-[192px] sm:text-[160px] sm:leading-[132px] text-[100px] leading-[85px] font-londrinaShadow text-center;
+    @apply px-6 py-3 2xl:text-[192px] sm:text-[160px] sm:leading-[132px] text-[60px] leading-[85px] font-londrinaShadow text-center;
   }
 
   .sub-heading {

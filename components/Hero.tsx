@@ -21,7 +21,7 @@ const Hero = () => {
               <motion.h2
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className='sub-heading fontbo lg:mt-20'
+                className='sub-heading font-bold -mt-5 lg:mt-20'
               >
                 english center<span className='blink'>_</span>
               </motion.h2>
