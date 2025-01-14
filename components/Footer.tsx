@@ -123,7 +123,7 @@ const Footer = () => {
         href='https://yeldynov.tech'
         target='_blank'
         rel='noopener noreferrer'
-        className='flex flex-col bg-black hover:text-primary justify-center font-jura text-gray-400 gap-4 p-4 text-sm font-medium text-muted-foreground md:flex-row md:items-center'
+        className='flex flex-col bg-black hover:text-primary text-center justify-center font-jura text-gray-400 gap-4 p-4 text-sm font-medium text-muted-foreground md:flex-row md:items-center'
       >
         <p>© 2025 design and production by WildHorses. All rights reserved.</p>
       </a>
