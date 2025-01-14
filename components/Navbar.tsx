@@ -81,11 +81,8 @@ const Navbar = () => {
                 custom={i}
                 variants={linkVariants}
                 className={cn(
-                  'hover:underline hover:underline-offset-8 text-26-semibold',
-                  navigationMenuTriggerStyle,
-                  buttonVariants({
-                    variant: 'ghost',
-                  })
+                  ' hover:text-primary px-4 text-26-semibold',
+                  navigationMenuTriggerStyle
                 )}
                 href={href}
               >
@@ -135,7 +132,7 @@ const Navbar = () => {
                       key={label}
                       custom={i}
                       href={href}
-                      className='text-medium hover:underline hover:underline-offset-8 text-[26px] font-jura'
+                      className='text-medium hover:text-primary text-[26px] font-jura'
                       onClick={handleLinkClick}
                     >
                       {label}
