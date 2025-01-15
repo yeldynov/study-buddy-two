@@ -11,6 +11,10 @@
 }
 
 @layer utilities {
+  html {
+    scroll-behavior: smooth;
+  }
+
   .flex-between {
     @apply flex justify-between items-center;
   }

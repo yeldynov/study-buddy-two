@@ -15,6 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import Link from 'next/link'
 
 // Links array
 const links = [
@@ -55,13 +56,13 @@ const Navbar = () => {
       initial='hidden'
       animate='visible'
       variants={navbarVariants}
-      className='font-jura fixed top-0 left-0 right-0 z-50 bg-navbarbg'
+      className='fixed top-0 left-0 right-0 z-50 font-jura bg-navbarbg'
     >
       <div className='mx-auto'>
         <motion.nav
           initial='hidden'
           animate='visible'
-          className='lg:flex items-center px-12 py-3 hidden justify-between lg:gap-10'
+          className='items-center justify-between hidden px-12 py-3 lg:flex lg:gap-10'
         >
           <motion.div
             variants={navbarVariants}
@@ -92,13 +93,15 @@ const Navbar = () => {
           </motion.div>
 
           <motion.div className='flex gap-2'>
-            <Button className='uppercase button-bg text-22-semibold hover:brightness-150'>
-              Записатися
-            </Button>
+            <Link href='#contact'>
+              <Button size='lg' variant='sbMain'>
+                ЗАПИСАТИСЯ
+              </Button>
+            </Link>
           </motion.div>
         </motion.nav>
         {/* Mobile */}
-        <motion.div className='block mx-5 py-5 lg:hidden'>
+        <motion.div className='block py-5 mx-5 lg:hidden'>
           <div className='flex items-center justify-between'>
             <div className='flex items-center gap-2'>
               <img src='logo.png' className='w-full' alt='logo' />
@@ -114,7 +117,7 @@ const Navbar = () => {
                   <Menu className='w-8 h-8' />
                 </Button>
               </SheetTrigger>
-              <SheetContent className='overflow-y-auto bg-navbarbg text-white z-50'>
+              <SheetContent className='z-50 overflow-y-auto text-white bg-navbarbg'>
                 <SheetHeader>
                   <SheetTitle>
                     <div className='flex items-center gap-2'>
@@ -123,7 +126,7 @@ const Navbar = () => {
                   </SheetTitle>
                 </SheetHeader>
                 <motion.div
-                  className='flex flex-col z-20 gap-4 mt-8 mb-8'
+                  className='z-20 flex flex-col gap-4 mt-8 mb-8'
                   initial='hidden'
                   animate='visible'
                 >
@@ -138,9 +141,7 @@ const Navbar = () => {
                       {label}
                     </motion.a>
                   ))}
-                  <Button className='uppercase font-jura mt-20 button-bg text-22-semibold hover:brightness-150'>
-                    Записатися
-                  </Button>
+                  <Button variant='sbMain'>Записатися</Button>
                 </motion.div>
               </SheetContent>
             </Sheet>
