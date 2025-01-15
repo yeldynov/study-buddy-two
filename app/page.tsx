@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Hero />
       {/* <About /> */}
-      {/* <Courses /> */}
+      <Courses />
       <Teachers />
       {/* <Testimonials /> */}
       {/* <Contact /> */}
