@@ -11,15 +11,16 @@ import {
 import SectionTitle from './SectionTitle'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import Autoplay from 'embla-carousel-autoplay'
 
 export type Teacher = {
-  id: string // Unique identifier
-  name: string // Teacher's name
-  role: string // Role or title
-  description: string // About the teacher
+  id: string
+  name: string
+  role: string
+  description: string
   about: string
-  photo: string // URL to the teacher's photo
-  cooperation: string // Cooperation options
+  photo: string
+  cooperation: string
 }
 
 interface TeacherSliderProps {
@@ -87,6 +88,7 @@ export default function Teachers() {
               loop: true,
               align: 'start',
             }}
+            plugins={[Autoplay({ delay: 3000 })]}
             className='relative'
           >
             <CarouselContent>
