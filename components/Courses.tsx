@@ -63,7 +63,7 @@ const Courses = () => {
   return (
     <section
       id='courses'
-      className='w-[102%] mx-auto bg-[url("/bg-courses.png")] min-h-screen lg:p-16 sm:bg-center bg-center bg-cover bg-no-repeat bg-blend-overlay'
+      className='mx-auto bg-[url("/bg-courses.png")] min-h-screen lg:p-16 sm:bg-center bg-center bg-cover bg-no-repeat bg-blend-overlay'
     >
       <SectionTitle title={'Програми та курси'} />
       <p className='max-w-3xl p-6 font-sans'>
