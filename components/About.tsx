@@ -1,11 +1,18 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import { ScrollArea } from './ui/scroll-area'
+import { motion, useInView } from 'framer-motion'
 
 const About = () => {
+  const ref = useRef(null) // Reference for the section
+  const isInView = useInView(ref, { once: true }) // Trigger when the section is visible
+
   return (
     <section
       id='about'
+      ref={ref}
       className="relative bg-[url('/bg-about.png')] overflow-hidden lg:p-16 bg-cover bg-no-repeat bg-blend-overlay"
     >
       <div
@@ -19,8 +26,13 @@ const About = () => {
       ></div>
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row'>
-          {/* Left Column - 40% on desktop */}
-          <div className='w-full lg:w-[40%] p-6 flex flex-col'>
+          {/* Left Column - Animated from top */}
+          <motion.div
+            className='w-full lg:w-[40%] p-6 flex flex-col'
+            initial={{ opacity: 0, y: -50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}} // Trigger animation on scroll
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
             <div className='relative w-full mb-6'>
               <Image
                 src='/viktoria-teacher.png'
@@ -46,14 +58,18 @@ const About = () => {
                 </p>
               </div>
             </ScrollArea>
-          </div>
+          </motion.div>
 
           {/* Divider */}
-          {/* <div className='hidden lg:block w-px bg-gradient-to-b from-transparent via-green-500 to-transparent opacity-50 shadow-[0_0_15px_0_rgba(34,197,94,0.6)] mx-4' /> */}
           <div className='hidden lg:block w-1 bg-lime-500 mx-4' />
 
-          {/* Right Column - 60% on desktop */}
-          <div className='w-full lg:w-[60%] p-6 flex flex-col'>
+          {/* Right Column - Animated from bottom */}
+          <motion.div
+            className='w-full lg:w-[60%] p-6 flex flex-col'
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}} // Trigger animation on scroll
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+          >
             <ScrollArea className='flex-1 pr-4'>
               <div className='space-y-6 mb-6'>
                 <h1 className='text-2xl font-jura font-bold tracking-wider'>
@@ -91,7 +107,7 @@ const About = () => {
                 />
               </div>
             </ScrollArea>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
