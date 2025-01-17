@@ -14,7 +14,7 @@ export default function Home() {
       <Courses />
       <Teachers />
       <Testimonials />
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </>
   )

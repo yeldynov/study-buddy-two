@@ -18,7 +18,7 @@ const About = () => {
         className='absolute top-[227px] -left-[100px]'
       ></div>
       <div className='container mx-auto'>
-        <div className='flex flex-col lg:flex-row min-h-screen'>
+        <div className='flex flex-col lg:flex-row'>
           {/* Left Column - 40% on desktop */}
           <div className='w-full lg:w-[40%] p-6 flex flex-col'>
             <div className='relative w-full mb-6'>
