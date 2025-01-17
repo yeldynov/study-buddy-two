@@ -20,7 +20,7 @@ import Link from 'next/link'
 // Links array
 const links = [
   { label: 'Про школу', href: '#about' },
-  { label: 'Чому ми', href: '#why-us' },
+  { label: 'Чому ми', href: '#about' },
   { label: 'Курси', href: '#courses' },
   { label: 'Відгуки', href: '#testimonials' },
   { label: 'Викладачі', href: '#teachers' },
