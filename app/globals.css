@@ -15,6 +15,9 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+  body {
+    @apply !min-w-full;
+  }
 
   .flex-between {
     @apply flex items-center justify-between;
