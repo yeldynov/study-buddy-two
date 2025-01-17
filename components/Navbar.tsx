@@ -141,7 +141,13 @@ const Navbar = () => {
                       {label}
                     </motion.a>
                   ))}
-                  <Button variant='sbMain'>Записатися</Button>
+                  <motion.a
+                    href='#contact'
+                    className='text-medium hover:text-primary text-[26px] font-jura'
+                    onClick={handleLinkClick}
+                  >
+                    <Button variant='sbMain'>Записатися</Button>
+                  </motion.a>
                 </motion.div>
               </SheetContent>
             </Sheet>
