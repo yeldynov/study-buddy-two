@@ -126,7 +126,7 @@ const Contact = () => {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className='space-y-8'
+                className='space-y-4'
               >
                 <FormField
                   control={form.control}
@@ -141,7 +141,9 @@ const Contact = () => {
                           className='bg-white border-gray-600 h-12 lg:w-4/5 text-black placeholder:text-gray-400'
                         />
                       </FormControl>
-                      <FormMessage />
+                      <div className='h-2'>
+                        <FormMessage />
+                      </div>
                     </FormItem>
                   )}
                 />
@@ -152,7 +154,7 @@ const Contact = () => {
                     control={form.control}
                     name='email'
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className='py-3'>
                         <FormControl>
                           <Input
                             placeholder='електронна пошта'
@@ -161,7 +163,9 @@ const Contact = () => {
                             className='bg-white border-gray-600 h-12 lg:w-4/5 text-black placeholder:text-gray-400'
                           />
                         </FormControl>
-                        <FormMessage />
+                        <div className='h-2'>
+                          <FormMessage />
+                        </div>
                       </FormItem>
                     )}
                   />
@@ -179,7 +183,9 @@ const Contact = () => {
                             className='bg-white border-gray-600 h-12 lg:w-4/5 text-black placeholder:text-gray-400'
                           />
                         </FormControl>
-                        <FormMessage />
+                        <div className='h-2'>
+                          <FormMessage />
+                        </div>
                       </FormItem>
                     )}
                   />
@@ -266,8 +272,10 @@ const Contact = () => {
                         <FormLabel className='text-sm font-bold font-jura text-gray-300'>
                           Підтверджую обробку данних
                         </FormLabel>
+                        <div className='h-2'>
+                          <FormMessage />
+                        </div>
                       </div>
-                      <FormMessage />
                     </FormItem>
                   )}
                 />
