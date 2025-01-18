@@ -1,12 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { Loader2 } from 'lucide-react'
 import { Toaster, toast } from 'react-hot-toast'
+import emailjs from '@emailjs/browser'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -64,6 +65,10 @@ const levels = [
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '')
+  }, [])
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -79,15 +84,34 @@ const Contact = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
     try {
-      // Add your form submission logic here
-      console.log(values)
-      await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
-      toast.success('Форму успішно відправлено!', {
-        duration: 3000,
-        position: 'top-center',
-      })
-      form.reset() // Clear the form
+      const templateParams = {
+        from_name: values.name,
+        from_email: values.email,
+        phone: values.phone,
+        course:
+          courses.find((c) => c.value === values.course)?.label ||
+          values.course,
+        level:
+          levels.find((l) => l.value === values.level)?.label || values.level,
+      }
+
+      const response = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        templateParams
+      )
+
+      if (response.status === 200) {
+        toast.success('Форму успішно відправлено!', {
+          duration: 3000,
+          position: 'top-center',
+        })
+        form.reset()
+      } else {
+        throw new Error('Failed to send email')
+      }
     } catch (error) {
+      console.error('Error sending email:', error)
       toast.error('Помилка при відправці форми. Спробуйте ще раз.', {
         duration: 3000,
         position: 'top-center',
