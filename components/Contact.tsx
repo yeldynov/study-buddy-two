@@ -106,21 +106,21 @@ const Contact = () => {
 
       <div className="w-full max-w-6xl bg-[url('/sub-bg-contact.png')] border-4 border-lime-500 rounded-lg relative">
         {/* Main container */}
-        <div className='relative flex backdrop-blur-sm flex-col md:flex-row rounded-lg overflow-hidden'>
+        <div className='relative flex backdrop-blur-sm flex-col lg:flex-row rounded-lg overflow-hidden'>
           {/* Image section */}
-          <div className='w-full md:w-1/2 hidden lg:flex relative items-end'>
+          <div className='w-full lg:w-1/2 hidden lg:flex relative items-end'>
             <Image
               src='/racoon.png'
               alt='Cyberpunk raccoon'
               width={700} // Increase width
               height={700} // Increase height
-              className='object-cover md:object-contain' // Cover more space
+              className='object-cover lg:object-contain' // Cover more space
               priority
             />
           </div>
 
           {/* Form section */}
-          <div className='w-full md:w-1/2 lg:ml-10 p-8 relative'>
+          <div className='w-full lg:w-1/2 lg:ml-10 p-8 relative'>
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -138,7 +138,7 @@ const Contact = () => {
                         <Input
                           placeholder="введіть своє ім'я"
                           {...field}
-                          className='bg-white border-gray-600 h-12 lg:w-4/5 text-black placeholder:text-gray-400'
+                          className='bg-white border-gray-600 h-12 xl:w-4/5 text-black placeholder:text-gray-400'
                         />
                       </FormControl>
                       <div className='h-2'>
@@ -160,7 +160,7 @@ const Contact = () => {
                             placeholder='електронна пошта'
                             type='email'
                             {...field}
-                            className='bg-white border-gray-600 h-12 lg:w-4/5 text-black placeholder:text-gray-400'
+                            className='bg-white border-gray-600 h-12 xl:w-4/5 text-black placeholder:text-gray-400'
                           />
                         </FormControl>
                         <div className='h-2'>
@@ -180,7 +180,7 @@ const Contact = () => {
                             placeholder='номер телефону'
                             type='tel'
                             {...field}
-                            className='bg-white border-gray-600 h-12 lg:w-4/5 text-black placeholder:text-gray-400'
+                            className='bg-white border-gray-600 h-12 xl:w-4/5 text-black placeholder:text-gray-400'
                           />
                         </FormControl>
                         <div className='h-2'>
@@ -203,7 +203,7 @@ const Contact = () => {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className='bg-white border-gray-600 h-12 lg:w-4/5 text-gray-600'>
+                            <SelectTrigger className='bg-white border-gray-600 h-12 xl:w-4/5 text-gray-600'>
                               <SelectValue placeholder='Оберіть курс' />
                             </SelectTrigger>
                           </FormControl>
@@ -234,7 +234,7 @@ const Contact = () => {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className='bg-white border-gray-600 h-12 lg:w-4/5 text-gray-600'>
+                            <SelectTrigger className='bg-white border-gray-600 h-12 xl:w-4/5 text-gray-600'>
                               <SelectValue placeholder='Оберіть рівень' />
                             </SelectTrigger>
                           </FormControl>
@@ -284,7 +284,7 @@ const Contact = () => {
                   type='submit'
                   disabled={isSubmitting}
                   variant='sbMain'
-                  className='w-full lg:w-4/5  h-12 '
+                  className='w-full xl:w-4/5  h-12 '
                 >
                   {isSubmitting && (
                     <Loader2 className='mr-2 h-4 w-4 animate-spin' />
