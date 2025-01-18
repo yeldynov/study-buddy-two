@@ -104,19 +104,17 @@ const Contact = () => {
     >
       <Toaster />
 
-      <div className='w-full max-w-5xl relative'>
-        {/* Glowing border */}
-        <div className='absolute -inset-1 bg-gradient-to-r from-green-500 to-purple-600 rounded-lg blur opacity-25' />
-
+      <div className="w-full max-w-6xl bg-[url('/sub-bg-contact.png')] border-4 border-lime-500 rounded-lg relative">
         {/* Main container */}
-        <div className='relative flex  flex-col md:flex-row bg-transparent rounded-lg overflow-hidden'>
+        <div className='relative flex backdrop-blur-sm flex-col md:flex-row rounded-lg overflow-hidden'>
           {/* Image section */}
-          <div className='w-full md:w-1/2 relative aspect-square md:aspect-auto'>
+          <div className='w-full md:w-1/2 hidden lg:flex relative items-end'>
             <Image
               src='/racoon.png'
               alt='Cyberpunk raccoon'
-              fill
-              className='object-contain'
+              width={700} // Increase width
+              height={700} // Increase height
+              className='object-cover md:object-contain' // Cover more space
               priority
             />
           </div>
@@ -133,7 +131,9 @@ const Contact = () => {
                   name='name'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className='text-gray-200'>Ім'я</FormLabel>
+                      <FormLabel className='text-gray-200 text-base'>
+                        Ім'я
+                      </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="введіть своє ім'я"
